@@ -26,18 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 tr.insertCell(colElement);
             }
         }
-    });
 
-    //set grid color color
-    let cell = canvas.getElementsByTagName('td');
-    console.log('cell length ' + cell.length);
-    for (var k = 0; k < cell.length; k++) {
-        cell[k].addEventListener('click', function (event) {
-            let color = colorPicker.value;
-            event.target.setAttribute('style', 'background-color: ' + color);
-            console.log('click');
-        })
-    }
+        //set grid color color
+        let cell = canvas.getElementsByTagName('td');
+        console.log('cell length ' + cell.length);
+        for (var k = 0; k < cell.length; k++) {
+            cell[k].addEventListener('click', function (event) {
+                let color = colorPicker.value;
+                event.target.setAttribute('style', 'background-color: ' + color);
+                console.log('click');
+            });
+            cell[k].addEventListener('dblclick', function (event) {
+                event.target.setAttribute('style', 'background-color: ' + document.body.style.backgroundColor);
+            })
+        }
+    });
 
 
 })
