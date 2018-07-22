@@ -14,6 +14,7 @@ function makeGrid() {
     //prevent browser default action and get user input
     sizePicker.addEventListener('submit', function (event) {
         event.preventDefault();
+        canvas.innerHTML = '';
 
         //createElement (row and col);
         let rowElement = document.createElement('tr');
